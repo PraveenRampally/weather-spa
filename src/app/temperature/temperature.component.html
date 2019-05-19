@@ -1,0 +1,8 @@
+<div class="container container-fluid">
+    <br/>
+<weather-spa-add (addTemperature)="addTemperature($event)"></weather-spa-add>
+<br/>
+<weather-spa-summary [temperatures]="temperatures"></weather-spa-summary>
+<br/>
+<weather-spa-list [temperatures]="temperatures" (deleteTemperature)="deleteTemperature($event)"></weather-spa-list>
+</div>

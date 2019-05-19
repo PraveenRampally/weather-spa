@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+  <div class="row">
+      <h4>Temperature Log:</h4>
+  </div>
+<div class="row mt-2">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Temperature</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let temperature of temperatures">
+        <td>{{temperature.createDate | date: 'mediumDate'}}</td>
+        <td>{{temperature.temperature}} </td>
+        <td><button type="submit" class="btn btn-primary"(click)="onDeleteTemperature(temperature._id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</div>  

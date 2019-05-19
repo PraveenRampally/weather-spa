@@ -1,0 +1,22 @@
+<form class="form-inline" [formGroup]="temperatureForm" novalidate (ngSubmit)="onSubmit()">
+  <div class="col-md-12 form-group">
+    <div class="col-md-10">
+        <label for="temperature" class="label">Temperature:</label>
+        <div class="input-group">
+          <input id="temperature" type="number" class="form-control" placeholder="" formControlName="temperature" required>
+          <div class="input-group-append">
+            <span class="input-group-text">°c</span>
+          </div>
+        </div>
+        <div *ngIf="temperatureForm.controls['temperature'].invalid && (temperatureForm.controls['temperature'].dirty || temperatureForm.controls['temperature'].touched)" class="alert alert-danger">
+            <div *ngIf="temperatureForm.controls['temperature'].errors.required">
+              Temperature is required.
+            </div>
+          </div>
+    </div>
+    <div class="col-md-2">
+      <label class="sr-only">hidden</label>
+      <button type="submit" class="btn btn-primary" [disabled]="!temperatureForm.valid">Add Temperature</button>
+    </div>
+  </div>
+</form>
